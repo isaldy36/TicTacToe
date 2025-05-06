@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portofolio Pribadi</title>
+  <style>
+    /* Reset and base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background-color: #f9fafb;
+      color: #111827;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    /* Container */
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 0;
+      flex: 1;
+    }
+    /* Header */
+    header {
+      background-color: #2563eb;
+      color: white;
+      padding: 1rem 0;
+      box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+    }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 0;
+    }
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav ul li a {
+      font-weight: 600;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    nav ul li a:hover,
+    nav ul li a:focus {
+      background-color: #1d4ed8;
+      outline: none;
+    }
+    /* Sections */
+    section {
+      margin-bottom: 3rem;
+    }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid #2563eb;
+      display: inline-block;
+      padding-bottom: 0.25rem;
+    }
+    /* Tentang */
+    #tentang p {
+      max-width: 700px;
+      font-size: 1.1rem;
+      color: #374151;
+    }
+    /* Proyek */
+    #proyek .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover,
+    .card:focus-within {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgb(0 0 0 / 0.15);
+      outline: none;
+    }
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: #1e40af;
+    }
+    .card p {
+      flex-grow: 1;
+      color: #4b5563;
+      font-size: 1rem;
+    }
+    /* Kontak */
+    #kontak form {
+      max-width: 500px;
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    #kontak label {
+      font-weight: 600;
+      color: #374151;
+    }
+    #kontak input,
+    #kontak textarea {
+      padding: 0.5rem;
+      border: 1px solid #d1d5db;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-family: inherit;
+      resize: vertical;
+      transition: border-color 0.3s ease;
+    }
+    #kontak input:focus,
+    #kontak textarea:focus {
+      border-color: #2563eb;
+      outline: none;
+      box-shadow: 0 0 0 3px rgb(37 99 235 / 0.3);
+    }
+    #kontak button {
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #kontak button:hover,
+    #kontak button:focus {
+      background-color: #1d4ed8;
+      outline: none;
+    }
+    /* Footer */
+    footer {
+      background-color: #1e293b;
+      color: #94a3b8;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      header .container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Nama Saya</h1>
+      <nav>
+        <ul>
+          <li><a href="#home" tabindex="1">Home</a></li>
+          <li><a href="#tentang" tabindex="2">Tentang</a></li>
+          <li><a href="#proyek" tabindex="3">Proyek</a></li>
+          <li><a href="#kontak" tabindex="4">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="home" tabindex="-1">
+    <section id="tentang" aria-labelledby="tentang-title">
+      <h2 id="tentang-title">Tentang</h2>
+      <p>
+        Saya adalah seorang pengembang web yang bersemangat dengan pengalaman dalam membuat aplikasi web modern dan responsif. Saya suka belajar teknologi baru dan menciptakan solusi yang efektif dan efisien.
+      </p>
+    </section>
+
+    <section id="proyek" aria-labelledby="proyek-title">
+      <h2 id="proyek-title">Proyek</h2>
+      <div class="cards">
+        <article class="card" tabindex="0" aria-label="Proyek 1">
+          <h3>Proyek 1</h3>
+          <p>Sebagai pengembang web, saya telah mengerjakan berbagai proyek yang mencerminkan keahlian saya dalam merancang dan membangun antarmuka pengguna yang responsif, intuitif, dan fungsional. Setiap proyek dirancang dengan perhatian terhadap detail, performa, dan pengalaman pengguna. Saya fokus pada pengembangan menggunakan HTML, CSS, JavaScript, serta berbagai framework modern, dengan tujuan menciptakan solusi web yang efisien dan mudah diakses.</p>
+        </article>
+        <article class="card" tabindex="0" aria-label="Proyek 2">
+          <h3>Proyek 2</h3>
+          <p>Saya membangun proyek-proyek web yang berfokus pada kecepatan, aksesibilitas, dan desain yang modern. Setiap aplikasi atau website yang saya kembangkan mencerminkan pemahaman saya terhadap prinsip desain UI/UX, serta kemampuan teknis dalam mengubah ide menjadi produk digital yang dapat digunakan secara nyata.</p>
+        </article>
+        <article class="card" tabindex="0" aria-label="Proyek 3">
+          <h3>Proyek 3</h3>
+          <p>Melalui proyek-proyek pribadi, saya mengeksplorasi berbagai teknologi web dan pendekatan pengembangan yang efisien. Mulai dari landing page sederhana hingga aplikasi web yang kompleks, saya berusaha menciptakan karya yang tidak hanya terlihat menarik tetapi juga handal dan mudah dipelihara.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="kontak" aria-labelledby="kontak-title">
+      <h2 id="kontak-title">Kontak</h2>
+      <form action="#" method="post" novalidate>
+        <label for="nama">Nama</label>
+        <input type="text" id="nama" name="nama" placeholder="Nama Anda" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="email@gmail.com" required />
+
+        <label for="pesan">Pesan</label>
+        <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
+
+        <button type="submit">Kirim</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MW.Isal. Semua hak cipta dilindungi.</p>
+  </footer>
+</body>
+</html>
